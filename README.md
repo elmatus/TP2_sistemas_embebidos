@@ -37,6 +37,11 @@
   
 
 - Luego se procede a usar Time Events, eliminando "prefix.sct", luego se copia "BlinkTimeEvent.-sct" en la carpeta "gen" y se lo
-renombra, como se hizo anteriormente. 
+renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#define __USE_TIME_EVENTS (true)```.
+
+- Si se quiere cambiar de LED se modifica el archivo "prefix.sct". Si por ejemplo se quiere prender el led rojo se deberá descomentar la línea ```const LEDR: integer = 0``` y se deberá modificar el primer argumento de la función opLED() por ```LEDR```. 
+
+  ![](https://github.com/Hitalio/TP1/blob/master/images/punto1_yakindu.PNG)
+
 
 
