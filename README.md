@@ -14,26 +14,26 @@
 - Click derecho en prefix.sgen -> Generate Code Artifacts
   - Si aparece el siguiente cartel de error hacer Clean Proyect, luego Build Proyect y realizar nuevamente el paso descripto arriba.
   
-  ![](https://github.com/Hitalio/TP1/blob/master/images/error_prefix_sgen.PNG)
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/error_prefix_sgen.PNG)
   
 - Para correr el código correspondiente a Blinky.-sct en main.c se deberá tener definido lo siguiente: 
 
-  ![](https://github.com/Hitalio/TP1/blob/master/images/punto1_TimeEvents.PNG)
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_TimeEvents.PNG)
   
 - Finalmente realizar Clean Project -> Build Project -> Debug (Como se explica en el TP1). 
   
 - En el main primero se realizan inicializaciones, con funciones utilizadas en el TP1. Tener en cuenta que ```__USE_TIME_EVENTS == false```
   en este caso. 
   
-  ![](https://github.com/Hitalio/TP1/blob/master/images/punto1_main_init.PNG)
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_main_init.PNG)
   
 - Luego entra al bucle que se ejecuta siempre:
 
-  ![](https://github.com/Hitalio/TP1/blob/master/images/punto1_while.PNG)
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_while.PNG)
   
 - En este caso se ejecuta la línea ```prefixIface_raise_evTick(&statechart);```
   
-  ![](https://github.com/Hitalio/TP1/blob/master/images/punto1_raise_evTick.PNG)
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_raise_evTick.PNG)
   
 
 - Luego se procede a usar Time Events, eliminando "prefix.sct", luego se copia "BlinkTimeEvent.-sct" en la carpeta "gen" y se lo
@@ -41,7 +41,7 @@ renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#def
 
 - Si se quiere cambiar de LED se modifica el archivo "prefix.sct". Si por ejemplo se quiere prender el led rojo del led rgb se deberá descomentar la línea ```const LEDR: integer = 0``` y se deberá modificar el primer argumento de la función opLED() por ```LEDR```. 
 
-  ![](https://github.com/Hitalio/TP1/blob/master/images/punto1_yakindu.PNG)
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_yakindu.PNG)
 
 
 
