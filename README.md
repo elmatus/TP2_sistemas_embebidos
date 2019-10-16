@@ -45,3 +45,19 @@ renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#def
 
 
 
+# Punto 2
+
+
+# Punto 3
+
+
+# Punto 4
+
+
+# Punto 5
+
+
+# Punto 6
+
+
+# Punto 7
