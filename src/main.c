@@ -78,7 +78,7 @@
  	 	 	 	 	 	cp Porton.-sct prefix.sct 							 		*/
 
 /* Select a compilation choise	*/
-#define TEST (SCT_1)
+#define TEST (SCT_3)
 
 
 #define TICKRATE_1MS	(1)				/* 1000 ticks per second */
