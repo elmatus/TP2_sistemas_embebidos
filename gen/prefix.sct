@@ -407,7 +407,7 @@
         </children>
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_zBObwbacEeef4KXvt0hZZQ"/>
       </children>
-      <styles xsi:type="notation:ShapeStyle" xmi:id="_zBNNobacEeef4KXvt0hZZQ" fontName="Verdana" fillColor="15790320" lineColor="12632256"/>
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_zBNNobacEeef4KXvt0hZZQ" fontName="Utsaah" fillColor="15790320" lineColor="12632256"/>
       <layoutConstraint xsi:type="notation:Bounds" xmi:id="_zBNNoracEeef4KXvt0hZZQ" x="385" y="10" width="628" height="416"/>
     </children>
     <styles xsi:type="notation:DiagramStyle" xmi:id="_SVY_EbaZEeef4KXvt0hZZQ"/>
