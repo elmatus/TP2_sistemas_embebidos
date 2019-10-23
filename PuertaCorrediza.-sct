@@ -37,11 +37,11 @@
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_2UgxcLacEeef4KXvt0hZZQ" specification="entry / raise siTitilarLED" name="CERRANDO" incomingTransitions="_VQ8NYLadEeef4KXvt0hZZQ _xDHncPWjEemZQeCxOS4CAw">
         <outgoingTransitions xmi:id="_Tdf50LadEeef4KXvt0hZZQ" specification="siAbrir" target="_3gjGwLacEeef4KXvt0hZZQ"/>
-        <outgoingTransitions xmi:id="_ieYPYPE0Eem7dMISEeQQ5A" specification="after 2000 ms" target="_0mV_cLacEeef4KXvt0hZZQ"/>
+        <outgoingTransitions xmi:id="_ieYPYPE0Eem7dMISEeQQ5A" specification="after 3000 ms" target="_0mV_cLacEeef4KXvt0hZZQ"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_3gjGwLacEeef4KXvt0hZZQ" specification="entry / raise siTitilarLED" name="ABRIENDO" incomingTransitions="_Tdf50LadEeef4KXvt0hZZQ _SwunAPWjEemZQeCxOS4CAw">
         <outgoingTransitions xmi:id="_VQ8NYLadEeef4KXvt0hZZQ" specification="siCerrar" target="_2UgxcLacEeef4KXvt0hZZQ"/>
-        <outgoingTransitions xmi:id="_viEEYPWjEemZQeCxOS4CAw" specification="after 2000ms&#xD;&#xA;" target="_4vY4cLacEeef4KXvt0hZZQ"/>
+        <outgoingTransitions xmi:id="_viEEYPWjEemZQeCxOS4CAw" specification="after 3000ms&#xD;&#xA;" target="_4vY4cLacEeef4KXvt0hZZQ"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_4vY4cLacEeef4KXvt0hZZQ" specification="entry / raise siNoTitilarLED" name="ABIERTO" incomingTransitions="_viEEYPWjEemZQeCxOS4CAw">
         <outgoingTransitions xmi:id="_v9_LYPWjEemZQeCxOS4CAw" specification="after 50ms" target="_uRo-UPWjEemZQeCxOS4CAw"/>
@@ -64,10 +64,10 @@
         <outgoingTransitions xmi:id="_rkfwQfE9Eemv6avVYo-arQ" specification="siNoTitilarLED" target="_rkg-YPE9Eemv6avVYo-arQ"/>
         <regions xmi:id="_rkRGwPE9Eemv6avVYo-arQ" name="r1">
           <vertices xsi:type="sgraph:State" xmi:id="_rkcs8PE9Eemv6avVYo-arQ" specification="entry / opLED(LED3,LED_OFF)" name="APAGADO" incomingTransitions="_rkZpoPE9Eemv6avVYo-arQ _rkZCkPE9Eemv6avVYo-arQ">
-            <outgoingTransitions xmi:id="_rkeiI_E9Eemv6avVYo-arQ" specification="after 500 ms" target="_rkUxLPE9Eemv6avVYo-arQ"/>
+            <outgoingTransitions xmi:id="_rkeiI_E9Eemv6avVYo-arQ" specification="after 250 ms" target="_rkUxLPE9Eemv6avVYo-arQ"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_rkUxLPE9Eemv6avVYo-arQ" specification="entry / opLED(LED3, LED_ON)" name="ENCENDIDO" incomingTransitions="_rkeiI_E9Eemv6avVYo-arQ">
-            <outgoingTransitions xmi:id="_rkZpoPE9Eemv6avVYo-arQ" specification="after 500 ms" target="_rkcs8PE9Eemv6avVYo-arQ"/>
+            <outgoingTransitions xmi:id="_rkZpoPE9Eemv6avVYo-arQ" specification="after 250 ms" target="_rkcs8PE9Eemv6avVYo-arQ"/>
           </vertices>
           <vertices xsi:type="sgraph:Entry" xmi:id="_rkTjAPE9Eemv6avVYo-arQ">
             <outgoingTransitions xmi:id="_rkZCkPE9Eemv6avVYo-arQ" specification="" target="_rkcs8PE9Eemv6avVYo-arQ"/>
