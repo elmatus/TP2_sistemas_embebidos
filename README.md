@@ -49,7 +49,7 @@ renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#def
 
 - Si aparece el siguiente cartel de error al hacer Build Project:
 
-  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/error_build_project.jpg)
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/error_build_project.jpeg)
 
   Hacer Close Project y luego Build Project
 
