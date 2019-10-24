@@ -47,8 +47,11 @@ renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#def
 
 - Si hay problemas al ejecutar un programa utilizando Yakindu comprobar las prioridades. Para eso hacer click derecho en el cuadro donde se definen constantes, eventos, etc. -> Show Properties View -> Region Priority y ahí colocar las regiones en orden, de acuerdo como vaya ejecutandose el programa. 
 
+- Si aparece el siguiente cartel de error al hacer Build Project:
 
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/error_build_project.jpg)
 
+  Hacer Close Project y luego Build Project
 
 # Punto 2
 
