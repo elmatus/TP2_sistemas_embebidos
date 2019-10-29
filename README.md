@@ -58,14 +58,20 @@ renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#def
 
 # Punto 2
 
- -  El siguiente programa se basa en simular un generador de funciones, con 3 formas de onda (cuadrada, senoidal y triangular) con sus respectivas propiedades (magnitud y frecuencia). El programa tambien considera cuando la persona quiere cambiar algunas de las propiedades (tanto para aumentar como disminuir), los bloques de estado se presentan a continuación:
+ -  El siguiente programa se basa en simular un generador de funciones, con 3 formas de onda (cuadrada, senoidal y triangular) con sus respectivas propiedades (magnitud y frecuencia). El programa también considera cuando la persona quiere cambiar algunas de las propiedades (tanto para aumentar como disminuir), los bloques de estado se presentan a continuación:
  
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/main-region.png)
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/down-magnitud.png)
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/up-magnitud.png)
- ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/magnitud.png | width=250 | height=250)
- ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/formaDeOnda.png| width=250 | height=250)
+ ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/magnitud.png)
+ ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/formaDeOnda.png)
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/tecx.png)
+
+- El prefix es el siguiente:
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/prefix.png)
+  
+- El funcionamiento de este programa consiste en setear el LED RGB como la forma de onda que uno quiere utilizar, esto se logra con la tecla TEC1. Luego, con la tecla TEC2 se puede configurar que se quiere setear (magnitud o fase, dependiendo del usuario que quiere configurar) donde el usuario puede ver si se prende el LED1 o LED2 indicando lo que va a setear (LED1 para la magnitud y LED2 para la fase), por ultimo, para aumentar el valor o disminuir se utilizan las teclas TEC3 y TEC4 en dicho orden (TEC3 aumenta y TEC4 disminuye el valor), cuando el usuario cambia las propiedades de la señal se prende el LED4 indicando que se cambio la fase o la magnitud
 
 # Punto 3
 
