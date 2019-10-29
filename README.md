@@ -38,7 +38,7 @@
   
 - En este caso se ejecuta la línea ```prefixIface_raise_evTick(&statechart);```
   
-  ![scale=0.5](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_raise_evTick.PNG)
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_raise_evTick.PNG)
   
 
 - Luego se procede a usar Time Events, eliminando "prefix.sct", luego se copia "BlinkTimeEvent.-sct" en la carpeta "gen" y se lo
@@ -58,6 +58,14 @@ renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#def
 
 # Punto 2
 
+ -  El siguiente programa se basa en simular un generador de funciones, con 3 formas de onda (cuadrada, senoidal y triangular) con sus respectivas propiedades (magnitud y frecuencia). El programa tambien considera cuando la persona quiere cambiar algunas de las propiedades (tanto para aumentar como disminuir), los bloques de estado se presentan a continuación:
+ 
+ ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/main-region.png)
+ ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/down-magnitud.png)
+ ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/up-magnitud.png)
+ ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/magnitud.png)
+ ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/formaDeOnda.png)
+ ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/tecx.png)
 
 # Punto 3
 
