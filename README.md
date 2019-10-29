@@ -70,13 +70,17 @@ renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#def
 
 # Punto 7
 
-- En este punto se simulo la maquina de estados de un microondas, donde se tiene 3 estados de cocción, un botón de arranque o terminar operación, un sensor donde se abrió la puerta y por ultimo un botón para cancelar el modo en que esta. En la siguiente imagen se observa las maquinas de estados:
+- En este punto se simulo la maquina de estados de un microondas, donde se tiene 3 estados de cocción, un botón de arranque o terminar operación, un sensor donde se abrió la puerta y por ultimo un botón para cancelar el modo en que esta. En las siguientes imagenes se observa las maquinas de estados:
 
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/microondas/main-region.png)
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/microondas/arranque-terminar.png)
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/microondas/modos.png)
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/microondas/tecx.png)
 
+- Otra cosa importante para el programa de Yakindu es el prefix que presenta las definiciones de las maquina de estado, como LED_ON o siModo. El prefix es el siguiente:
+
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/microondas/prefix.png)
+
 - Mirando los diagramas nos damos cuenta que se puede parar el microondas cuando se comenzó la operación utilizando el botón de arranque/terminar,  por otro lado si se abrió la puerta automáticamente el microondas se detiene. También se observa que el diagrama de estados permite que el microondas arranque cuando no hay ningún modo.
 
--El funcionamiento del programa es simple de entender. En el LED RGB que presenta la EDU-CIAA se setea el modo de cocción a través de la tecla TEC1, luego se puede arrancar el microondas apretando la tecla TEC2 y con la misma tecla se puede parar el procedimiento. Para simular el sensor de que la puerta esta abierta se utilizo el botón TEC3 que cuando se aprieta indica que se abrió la puerta y termina el proceso de cocción establecido (si había uno), por otro lado, se configura la tecla TEC4 para borrar el modo de cocción.
+- El funcionamiento del programa es simple de entender. En el LED RGB que presenta la EDU-CIAA se setea el modo de cocción a través de la tecla TEC1, luego se puede arrancar el microondas apretando la tecla TEC2 y con la misma tecla se puede parar el procedimiento. Para simular el sensor de que la puerta esta abierta se utilizo el botón TEC3 que cuando se aprieta indica que se abrió la puerta y termina el proceso de cocción establecido (si había uno), por otro lado, se configura la tecla TEC4 para borrar el modo de cocción.
