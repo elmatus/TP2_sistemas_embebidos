@@ -12,9 +12,9 @@
   -	```targetFolder = "projects/TP2_sistemas_embebidos/gen"```
   - ```libraryTargetFolder = "projects/TP2_sistemas_embebidos/gen"```
 - El archivo "prefix.sgen" tiene lo que se muestra a continuación:
-![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/sgen.PNG)
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/sgen.png)
 - Click derecho en prefix.sgen -> Generate Code Artifacts como se muestra en la siguiente figura:
-![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/sgen-generateCode.PNG)
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/sgen-generateCode.png)
   - Si aparece el siguiente cartel de error hacer Clean Proyect, luego Build Proyect y realizar nuevamente el paso descripto arriba.
   
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/error_prefix_sgen.PNG)
