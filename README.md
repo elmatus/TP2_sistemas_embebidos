@@ -38,7 +38,7 @@
   
 - En este caso se ejecuta la línea ```prefixIface_raise_evTick(&statechart);```
   
-  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_raise_evTick.PNG)
+  ![scale=0.5](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_raise_evTick.PNG)
   
 
 - Luego se procede a usar Time Events, eliminando "prefix.sct", luego se copia "BlinkTimeEvent.-sct" en la carpeta "gen" y se lo
