@@ -83,9 +83,9 @@ Se probaron los ejemplos ya existentes realizando los pasos explicados en el pun
 - El prefix es el siguiente: \
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/prefix.png)
   
- - Una validez hecha es que si no selecciono ni magnitud o frecuencia no pueda aumentar o disminuir la misma.
+ - Una validación hecha es que si no selecciono ni magnitud o frecuencia no se puede aumentar o disminuir la misma.
   
-- El funcionamiento de este programa consiste en setear el LED RGB como la forma de onda que uno quiere utilizar, esto se logra con la tecla TEC1. Luego, con la tecla TEC2 se puede configurar que se quiere setear (magnitud o fase, dependiendo del usuario que quiere configurar) donde el usuario puede ver si se prende el LED1 o LED2 indicando lo que va a setear (LED1 para la magnitud y LED2 para la fase), por ultimo, para aumentar el valor o disminuir se utilizan las teclas TEC3 y TEC4 en dicho orden (TEC3 aumenta y TEC4 disminuye el valor), cuando el usuario cambia las propiedades de la señal se prende el LED4 indicando que se cambio la fase o la magnitud.
+- El funcionamiento de este programa consiste en setear el LED RGB como la forma de onda que uno quiere utilizar, esto se logra con la tecla TEC1. Luego, con la tecla TEC2 se puede configurar que se quiere setear (magnitud o fase, dependiendo de que quiera configurar el usuario) donde el usuario puede ver si se prende el LED1 o LED2 indicando lo que va a setear (LED1 para la amplitud y LED2 para la frecuencia). Por último, para disminuir el valor o aumentarlo se utilizan las teclas TEC3 y TEC4, respectivamente. Cuando el usuario subió o bajó el valor de amplitud o frecuencia se prenderá por un instante (500ms) el LED4. 
 
 
 # Punto 4
