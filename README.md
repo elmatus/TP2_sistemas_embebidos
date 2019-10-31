@@ -64,25 +64,25 @@ Se probaron los ejemplos ya existentes realizando los pasos explicados en el pun
 
  -  El siguiente programa se basa en simular un generador de funciones, con 3 formas de onda (cuadrada, senoidal, triangular o sin señal) con sus respectivas magnitudes (amplitud y frecuencia). El programa también considera cuando la persona quiere cambiar algunas de las magnitudes, es decir aumentar o disminuir la amplitud o la frecuencia. Los bloques del diagrama de estados se presentan a continuación:
 
-  - Bloque para validar tecla presionada:
+  - Bloque para validar tecla presionada:\
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/tecx.png)
 
- - Bloque de espera (Idle):
+ - Bloque de espera (Idle):\
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/main-region.png)
  
- - Bloque para seleccionar la forma de onda:
+ - Bloque para seleccionar la forma de onda:\
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/formaDeOnda.png)
 
-- Bloque para seleccionar la magnitud de la forma de onda, es decir amplitud/tensión pico y frecuencia:
+- Bloque para seleccionar la magnitud de la forma de onda, es decir amplitud/tensión pico y frecuencia:\
 
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/magnitud.png)
  
- - Bloques para aumentar o disminuir la magnitud:
+ - Bloques para aumentar o disminuir la magnitud:\
 
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/down-magnitud.png)
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/up-magnitud.png)
  
-- El prefix es el siguiente:
+- El prefix es el siguiente:\
 
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/prefix.png)
   
