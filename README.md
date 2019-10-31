@@ -3,7 +3,7 @@
 El propósito del siguiente trabajo práctico es implementar una máquina de estados mediante la herramienta Yakindu, de modo que la codificación del programa se realice mediante bloques y no lineas de código.
 Una ventaja del uso de Yakindu, es que permite simular los programas y observar como se van modificando las variables, permitiendo también observar errores o mejoras antes de implementarlo en la placa EDU-CIAA.
 
-Por ello se implementó un unico archivo .c y se realizaron distintas aplicaciones con máquinas de estado. Como por ejemplo, un generador de funciones, un portó, una escalera, entre otros.
+Por ello se implementó un único archivo .c y se realizaron distintas aplicaciones con máquinas de estado. Como por ejemplo, un generador de funciones, un portón, una escalera, entre otros.
 
 
 - Inicialmente se modifica el archivo project.mk del proyecto firmware_v2.
@@ -12,7 +12,7 @@ Por ello se implementó un unico archivo .c y se realizaron distintas aplicacion
 
 
 
-Se debe modificar la macro SCT_? en main.c, dependiendo del ejercicio a resolver, de este modo, la maquina de estados operará con las distintas secciones del código
+Se debe modificar la macro TEST (#define TEST (SCT_X)) en main.c, dependiendo del ejercicio a resolver, de este modo, la maquina de estados operará con las distintas secciones del código
 
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/sct_.jpg)
 
@@ -46,6 +46,13 @@ El siguiente programa corresponde a hacer titilar un LED.
   en este caso. 
   
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_main_init.PNG)
+  
+- Con la función prefix_init() se realiza la inicialización del diagrama de estados. A continuación se muestra la implementación de esta función, donde se inicializan los datos y los eventos:
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_prefix_init.PNG)
+
+- Además con la función prefix_enter() se setea la secuancia del diagrama por defecto. 
+  
   
 - Luego entra al bucle que se ejecuta siempre:
 
