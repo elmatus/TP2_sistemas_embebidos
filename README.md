@@ -114,6 +114,23 @@ En el siguiente programa se implementa el control de un portón de cochera, el c
 
 # Punto 6
 
+En el siguiente programa se implementa el control de una escalera mecánica, la misma presenta un motor con un único sentido, dos velocidades, sensores de ingreso  y egreso, tambíen tieneseñalización luminosa.
+
+- Bloque correspondiente a la definición de constantes, eventos y operaciones: \ 
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/escalera/prefix.jpg)
+
+- Bloque de espera del programa o idle: \
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/escalera/idle.jpg)
+
+- Bloque que indica la lógica de la escalera\
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/escalera/escalera.jpg)
+
+- Bloque para hacer parpadear un led con dos velocidades diferentes: \
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/escalera/titilar_LED.jpg)
+
+- El programa comenzará con la escalera sin ocuapción, esto se indicará mediante un LED que titila a cierta velocidad de 1s.
+Luego, mediante un sensor de ingreso, ubicado en el boton 1, se detecta que una persona ingresa a la escalera, visualmente esto se identifica con el mismo LED pero titilando a una velocidad mayor (250ms).
+Finalmente, mediante el botón 2, se detecta el egreso de la persona, por lo que el LED vuelve a la posicón inicial, titilando a una velocidad de 1s.
 
 # Punto 7
 
