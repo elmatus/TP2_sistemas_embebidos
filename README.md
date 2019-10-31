@@ -80,7 +80,7 @@ Se probaron los ejemplos ya existentes realizando los pasos explicados en el pun
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/down-magnitud.png)
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/up-magnitud.png)
  
-- El prefix es el siguiente: \
+- El prefix es el siguiente, es decir donde se declaran las constantes y eventos: \
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/prefix.png)
   
  - Una validación hecha es que si no selecciono ni magnitud o frecuencia no se puede aumentar o disminuir la misma.
@@ -93,6 +93,24 @@ Se probaron los ejemplos ya existentes realizando los pasos explicados en el pun
 
 # Punto 5
 
+En el siguiente programa se implementa el control de un portón de cochera, el cuál cuenta con un motor con dos sentidos, control de apertura y cierre, fines de carrera y señalización luminosa. A continuación se presentan los bloques correspodientes al digrama de estados:
+
+- Bloque correspondiente a la definición de constantes, eventos y operaciones: \ 
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/porton/prefix.PNG)
+
+- Bloque para validar las teclas: \
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/porton/tecx.PNG)
+
+- Bloque de espera del programa o idle: \
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/porton/idle.PNG)
+
+- Bloque que indica la lógica del portón: \
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/porton/porton.PNG)
+
+- Bloque para hacer parpadear un led: \
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/porton/led.PNG)
+
+- El programa comenzará con el portón cerrado y luego estará esperando al evento de presionar una tecla. Si se presiona la tecla TEC1 se abrira el portón. Mientras se está abriendo titilará el LED3 hasta que sense el fin de carrera del portón abierto, representado por TEC 3. Luego se prenderá el LED1 para indicar que el portón se encuentra abierto. Si se presiona la tecla TEC2 se cerrará el portón y se realiza una secuencia similar al abrir el portón. Comenzará a titilar el LED3 hasta que se lo indique el fin de carrera de portón cerrado, representado por TEC4 y posteriormente se apagará el LED1 para indicar que el portón se encuentra cerrado. Cabe aclarar que si se presiona la tecla TEC2 al estar abriendo el portón, una vez que llegue al fin de carrera del portón cerrado, este volverá a la posición de cerrado. Análogamente ocurrirá una situación similar al estar cerrando el portón. 
 
 # Punto 6
 
