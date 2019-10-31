@@ -74,16 +74,13 @@ Se probaron los ejemplos ya existentes realizando los pasos explicados en el pun
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/formaDeOnda.png)
 
 - Bloque para seleccionar la magnitud de la forma de onda, es decir amplitud/tensión pico y frecuencia: \
-
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/magnitud.png)
  
  - Bloques para aumentar o disminuir la magnitud: \
-
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/down-magnitud.png)
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/up-magnitud.png)
  
 - El prefix es el siguiente: \
-
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/prefix.png)
   
  - Una validez hecha es que si no selecciono ni magnitud o frecuencia no pueda aumentar o disminuir la misma.
