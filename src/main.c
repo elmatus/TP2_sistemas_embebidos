@@ -80,7 +80,7 @@
 #define SCT_4 (4) // Panel de control de Generador de funciones
 
 /* Select a compilation choise	*/
-#define TEST (SCT_3)
+#define TEST (SCT_1)
 
 
 #define TICKRATE_1MS	(1)				/* 1000 ticks per second */
