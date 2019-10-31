@@ -67,10 +67,10 @@ Se probaron los ejemplos ya existentes realizando los pasos explicados en el pun
   - Bloque para validar tecla presionada:
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/tecx.png)
 
- -  Bloque de espera (Idle):
+ - Bloque de espera (Idle):
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/main-region.png)
  
- -  Bloque para seleccionar la forma de onda:
+ - Bloque para seleccionar la forma de onda:
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/formaDeOnda.png)
 
 - Bloque para seleccionar la magnitud de la forma de onda, es decir amplitud/tensión pico y frecuencia:
