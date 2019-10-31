@@ -1,13 +1,21 @@
 # TP2_sistemas_embebidos
 
 El propósito del siguiente trabajo práctico es implementar una máquina de estados mediante la herramienta Yakindu, de modo que la codificación del programa se realice mediante bloques y no lineas de código.
-Una ventaja del uso de Yakindu, es que permite simular los programas y observar como se van modificando las variables, permitiendo también observar errores o mejoras antes de implementarlo en la placa EDU-CIAA
+Una ventaja del uso de Yakindu, es que permite simular los programas y observar como se van modificando las variables, permitiendo también observar errores o mejoras antes de implementarlo en la placa EDU-CIAA.
+
 Por ello se implementó un unico archivo .c y se realizaron distintas aplicaciones con máquinas de estado. Como por ejemplo, un generador de funciones, un portó, una escalera, entre otros.
 
 
 - Inicialmente se modifica el archivo project.mk del proyecto firmware_v2.
   - Línea a modificar: ```PROJECT = projects/TP2/TP2_sistemas_embebidos```
   - comentar la línea que estaba descomentada.
+
+
+
+Se debe modificar la macro SCT_? en main.c, dependiendo del ejercicio a resolver, de este modo, la maquina de estados operará con las distintas secciones del código
+
+![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/sct_.jpg)
+
   
 # Punto 1:
 
