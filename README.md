@@ -17,7 +17,7 @@ Se debe modificar la macro TEST (#define TEST (SCT_X)) en main.c, dependiendo de
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/sct_.jpg)
 
   
-# Punto 1:
+# Blinky:
 
 El siguiente programa corresponde a hacer titilar un LED.
 
@@ -34,13 +34,18 @@ El siguiente programa corresponde a hacer titilar un LED.
   
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/error_prefix_sgen.PNG)
   
-  - Si se genera únicamente los archivos Prefix.h y sc_types.h cerrar el MCUXpresso y abrirlo nuevamente. Luego generar nuevamente los archivos
+  - Si se generan únicamente los archivos Prefix.h y sc_types.h cerrar el MCUXpresso y abrirlo nuevamente. Luego generar nuevamente los archivos
   
 - Para correr el código correspondiente a Blinky.-sct en main.c se deberá tener definido lo siguiente: 
 
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_TimeEvents.PNG)
   
 - Finalmente realizar Clean Project -> Build Project -> Debug (Como se explica en el TP1). 
+  
+- El diagrama de estados correspondiente a este ejemplo es el siguiente:
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_blinky.PNG)
+
   
 - En el main primero se realizan inicializaciones, con funciones utilizadas en el TP1. Tener en cuenta que ```__USE_TIME_EVENTS == false```
   en este caso. 
@@ -51,24 +56,44 @@ El siguiente programa corresponde a hacer titilar un LED.
 
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_prefix_init.PNG)
 
-- Además con la función prefix_enter() se setea la secuancia del diagrama por defecto. 
+- Además con la función prefix_enter() se setea la secuencia del diagrama por defecto. 
   
   
 - Luego entra al bucle que se ejecuta siempre:
 
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_while.PNG)
   
-- En este caso se ejecuta la línea ```prefixIface_raise_evTick(&statechart);```
+- En este caso se ejecuta la línea ```prefixIface_raise_evTick(&statechart);```, ya que los Time Events no están activados para este ejemplo. Este función levanta el evento evTick.
   
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_raise_evTick.PNG)
   
+- Además se ejecutará la función prefix_runCycle(), la cuál se encarga de ejecutar el loop realizado con Yakindu del diagrama de estados. 
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_prefix_runCycle.PNG)
+  
 
 - Luego se procede a usar Time Events, eliminando "prefix.sct", luego se copia "BlinkTimeEvent.-sct" en la carpeta "gen" y se lo
-renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#define __USE_TIME_EVENTS (true)```.
+renombra, como se hizo anteriormente. Ahora hay que definir en el main.c ```#define __USE_TIME_EVENTS (true)```.
 
 - Si se quiere cambiar de LED se modifica el archivo "prefix.sct". Si por ejemplo se quiere prender el led rojo del led rgb se deberá descomentar la línea ```const LEDR: integer = 0``` y se deberá modificar el primer argumento de la función opLED() por ```LEDR```. 
 
   ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_yakindu.PNG)
+
+- En este caso, en el loop del main se llamará a la función UpdateTimers(), la cuál define la estructura de los timers. 
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_UpdateTimers.PNG)
+  
+- Luego se entrará en un for(), en el cuál se llama a la función IsPendEvent(), en la cuál se comprueba si hay algún evento pendiente. 
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_IsPendEvent.PNG)
+
+- Finalmente se llama a dos funcione más en este for(). Primero se llama a prefix_raiseTimeEvent(), que es la encargada de levantar el evento de tiempo. 
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_IsPendEvent.PNG).PNG)
+
+- Luego se llamará a la función MarkAsAttEvent(), encargada avisar que el evento ya no se encuentra pendiente. 
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_MarkAsAttEvent.PNG)
 
 - Si hay problemas al ejecutar un programa utilizando Yakindu comprobar las prioridades. Para eso hacer click derecho en el cuadro donde se definen constantes, eventos, etc. -> Show Properties View -> Region Priority y ahí colocar las regiones en orden, de acuerdo como vaya ejecutandose el programa. 
 
@@ -78,15 +103,13 @@ renombra, como se hizo anteriormente. Ahora hay que definir en el main-c ```#def
 
   Hacer Close Project y luego Build Project
 
-# Punto 2
+Luego se probaron los ejemplos ya existentes realizando los pasos explicados anteriormente y se corroboró su correcto funcionamiento tanto simuladolos mediante Yakindu como bajando los programas a la EDU-CIAA, para tener una referencia de como utilizar Yakindu y así realizar las implementaciones pedidas.
 
-Se probaron los ejemplos ya existentes realizando los pasos explicados en el punto 1 y corroboró su correcto funcionamiento tanto simuladolos mediante Yakindu como bajando los programas a la EDU-CIAA.
-
-# Punto 3
+# Generador de funciones
 
  -  El siguiente programa se basa en simular un generador de funciones, con 3 formas de onda (cuadrada, senoidal, triangular o sin señal) con sus respectivas magnitudes (amplitud y frecuencia). El programa también considera cuando la persona quiere cambiar algunas de las magnitudes, es decir aumentar o disminuir la amplitud o la frecuencia. Los bloques del diagrama de estados se presentan a continuación:
 
-  - Bloque para validar tecla presionada: \
+  - Bloque para validar tecla presionada. Este bloque se reutilizará en las siguientes implementaciones. \
  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/tecx.png)
 
  - Bloque de espera (Idle): \
@@ -109,19 +132,26 @@ Se probaron los ejemplos ya existentes realizando los pasos explicados en el pun
   
 - El funcionamiento de este programa consiste en setear el LED RGB como la forma de onda que uno quiere utilizar, esto se logra con la tecla TEC1. Luego, con la tecla TEC2 se puede configurar que se quiere setear (magnitud o fase, dependiendo de que quiera configurar el usuario) donde el usuario puede ver si se prende el LED1 o LED2 indicando lo que va a setear (LED1 para la amplitud y LED2 para la frecuencia). Por último, para disminuir el valor o aumentarlo se utilizan las teclas TEC3 y TEC4, respectivamente. Cuando el usuario subió o bajó el valor de amplitud o frecuencia se prenderá por un instante (500ms) el LED4. 
 
+- En este ejemplo, asi como en los siguientes se define en el main la macro TEST como SCT_3. El main es similar al del punto anterior, con algunas modificaciones.
+- Se definió una función encargada de obtener el estado de las teclas, Buttons_GetStatus().
 
-# Punto 4
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/Buttons_GetStatus.PNG)
+
+- Luego, al igual que en el punto anterior, se inicializa la placa:
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/main.PNG)
+
+- Finalmente se entra en el ciclo que se ejecutará por siempre, en donde se obtiene el estado de los botones y en base a estos se levantarán los correspondientes eventos. 
+
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/generadorFunciones/while.PNG)
 
 
-# Punto 5
+# Portón de cochera
 
 En el siguiente programa se implementa el control de un portón de cochera, el cuál cuenta con un motor con dos sentidos, control de apertura y cierre, fines de carrera y señalización luminosa. A continuación se presentan los bloques correspodientes al digrama de estados:
 
 - Bloque correspondiente a la definición de constantes, eventos y operaciones: \ 
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/porton/prefix.PNG)
-
-- Bloque para validar las teclas: \
-![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/porton/tecx.PNG)
 
 - Bloque de espera del programa o idle: \
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/porton/idle.PNG)
@@ -134,9 +164,9 @@ En el siguiente programa se implementa el control de un portón de cochera, el c
 
 - El programa comenzará con el portón cerrado y luego estará esperando al evento de presionar una tecla. Si se presiona la tecla TEC1 se abrira el portón. Mientras se está abriendo titilará el LED3 hasta que sense el fin de carrera del portón abierto, representado por TEC 3. Luego se prenderá el LED1 para indicar que el portón se encuentra abierto. Si se presiona la tecla TEC2 se cerrará el portón y se realiza una secuencia similar al abrir el portón. Comenzará a titilar el LED3 hasta que se lo indique el fin de carrera de portón cerrado, representado por TEC4 y posteriormente se apagará el LED1 para indicar que el portón se encuentra cerrado. Cabe aclarar que si se presiona la tecla TEC2 al estar abriendo el portón, una vez que llegue al fin de carrera del portón cerrado, este volverá a la posición de cerrado. Análogamente ocurrirá una situación similar al estar cerrando el portón. 
 
-# Punto 6
+# Escalera mecánica
 
-En el siguiente programa se implementa el control de una escalera mecánica, la misma presenta un motor con un único sentido, dos velocidades, sensores de ingreso  y egreso, tambíen tieneseñalización luminosa.
+En el siguiente programa se implementa el control de una escalera mecánica, la misma presenta un motor con un único sentido, dos velocidades, sensores de ingreso  y egreso y señalización luminosa.
 
 - Bloque correspondiente a la definición de constantes, eventos y operaciones: \ 
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/escalera/prefix.jpg)
@@ -152,16 +182,21 @@ En el siguiente programa se implementa el control de una escalera mecánica, la 
 
 - El programa comenzará con la escalera sin ocuapción, esto se indicará mediante un LED que titila a cierta velocidad de 1s.
 Luego, mediante un sensor de ingreso, ubicado en el boton 1, se detecta que una persona ingresa a la escalera, visualmente esto se identifica con el mismo LED pero titilando a una velocidad mayor (250ms).
-Finalmente, mediante el botón 2, se detecta el egreso de la persona, por lo que el LED vuelve a la posicón inicial, titilando a una velocidad de 1s.
+Finalmente, mediante el botón 2, se detecta el egreso de la persona, por lo que el LED vuelve a la posición inicial, titilando a una velocidad de 1s.
 
-# Punto 7
+# Horno microondas
 
-- En este punto se simulo la maquina de estados de un microondas, donde se tiene 3 estados de cocción, un botón de arranque o terminar operación, un sensor donde se abrió la puerta y por ultimo un botón para cancelar el modo en que esta. En las siguientes imagenes se observa las maquinas de estados:
+- En este punto se simuló la máquina de estados de un microondas, donde se tienen 3 estados de cocción, un botón de arranque o terminar operación, un sensor donde se abrió la puerta y por último un botón para cancelar el modo en que está En las siguientes imagenes se observan las máquinas de estado:
 
+- Bloque de la región principal, espera (idle): \ 
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/microondas/main-region.png)
+
+- Bloque que indica cuando comenzar y terminar la cocción: \
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/microondas/arranque-terminar.png)
+
+- Bloque para seleccionar los modos de cocción: \
 ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/microondas/modos.png)
-![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/microondas/tecx.png)
+
 
 - Otra cosa importante para el programa de Yakindu es el prefix que presenta las definiciones de las maquina de estado, como LED_ON o siModo. El prefix es el siguiente:
 
