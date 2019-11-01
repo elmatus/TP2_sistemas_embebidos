@@ -89,7 +89,8 @@ renombra, como se hizo anteriormente. Ahora hay que definir en el main.c ```#def
 
 - Finalmente se llama a dos funcione más en este for(). Primero se llama a prefix_raiseTimeEvent(), que es la encargada de levantar el evento de tiempo. 
 
-  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_IsPendEvent.PNG).PNG)
+  ![](https://github.com/elmatus/TP2_sistemas_embebidos/blob/master/images/punto1_prefix_raiseTimeEvent.PNG)
+
 
 - Luego se llamará a la función MarkAsAttEvent(), encargada avisar que el evento ya no se encuentra pendiente. 
 
